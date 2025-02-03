@@ -4,43 +4,51 @@ import Image from "next/image";
 export default function Features() {
     const features = [
         {
-            title: "Sell Your Notes",
+            title: "SELL YOUR NOTES",
             imgSrc: "/sell_notes.svg",
         },
         {
-            title: "Buy Specific Notes",
+            title: "BUY SPECIFIC NOTES",
             imgSrc: "/buy_notes.svg",
         },
         {
-            title: "User Dashboard",
+            title: "USER DASHBOARD",
             imgSrc: "/user_dash.svg",
         },
         {
-            title: "User Dashboard",
+            title: "USER DASHBOARD",
             imgSrc: "/user_dash.svg",
         },
     ];
 
     return (
-        <section className="py-16 bg-gray-50">
-            <div className="container mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-8">Our Features</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 w-88">
+        <section className="py-16">
+            <div className="container mx-auto px-4">
+                <h2 className="text-4xl font-bold mb-12 text-center">
+                    Our Features
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="text-white flex flex-col items-center"
+                            className="bg-primary-0 rounded-3xl p-8 hover:scale-105 transition-transform duration-300"
                         >
-                            <div className="bg-blue-500 p-6 rounded-xl shadow-lg">
-                                <div className="relative w-32 h-32 mb-4">
-                                    <Image
-                                        src={feature.imgSrc}
-                                        alt={feature.title}
-                                        layout="fill"
-                                        objectFit="contain"
-                                    />
+                            <div className="flex flex-col items-center">
+                                <div className="relative w-48 h-48 mb-6">
+                                    <div className="absolute inset-0">
+                                        <Image
+                                            src={feature.imgSrc}
+                                            alt={feature.title}
+                                            layout="fill"
+                                            objectFit="contain"
+                                            className="drop-shadow-lg"
+                                        />
+                                    </div>
                                 </div>
-                                <h3 className="text-lg font-semibold">{feature.title}</h3>
+                                <h3 className="text-white font-bold text-xl tracking-wide">
+                                    {feature.title}
+                                </h3>
                             </div>
                         </div>
                     ))}
@@ -48,4 +56,4 @@ export default function Features() {
             </div>
         </section>
     );
-}
+};
